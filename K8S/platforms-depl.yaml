@@ -3,6 +3,7 @@
 # kubectl apply -f platforms-depl.yaml
 # list all deployments : kubectl get deployments
 # list all pods : kubectl get pods
+# delete a deployment : kubectl delete deployment platforms-depl
 
 apiVersion: apps/v1
 kind: Deployment
