@@ -1,0 +1,23 @@
+# PlatformService deployment
+# To deploy it to the kubernetes cluster 
+# kubectl apply -f platforms-depl.yaml
+# list all deployments : kubectl get deployments
+# list all pods : kubectl get pods
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: platforms-depl
+spec:
+  replicas: 1
+  selector: # selecting the template that we have created by the label
+    matchLabels:
+      app: platformservice
+  template: #defining the port and container that we will use
+    metadata:
+      labels:
+        app: platformservice
+    spec:
+      containers:
+        - name: platformservice
+          image: snaphoo/platformservice:latest
