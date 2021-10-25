@@ -1,0 +1,20 @@
+# PlatformService NodePort creation
+# Create the NodePort Service
+# kubectl apply -f platforms-np-srv.yaml
+# list NodePort : kubectl get services
+# delete NodePort : kubectl delete Service 
+
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: platformnpservice-srv
+spec:
+  type: NodePort
+  selector:
+    app: platformservice # Links the NodePort to our deployment service Template label
+  ports:
+    - name: platformservice
+      protocol: TCP
+      port: 80
+      targetPort: 80
