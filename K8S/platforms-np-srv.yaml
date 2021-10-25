@@ -2,7 +2,7 @@
 # Create the NodePort Service
 # kubectl apply -f platforms-np-srv.yaml
 # list NodePort : kubectl get services
-# delete NodePort : kubectl delete Service 
+# delete NodePort : kubectl delete Service platformnpservice-srv
 
 
 apiVersion: v1
